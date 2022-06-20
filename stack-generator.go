@@ -120,9 +120,10 @@ func main() {
 		exitWithError(err.Error())
 	}
 
-	if err = exec.Command("gofmt", "-w", *filenameFlag).Run(); err != nil {
-		exitWithError(err.Error())
-	}
+	// Will be run in goimports
+	// if err = exec.Command("gofmt", "-w", *filenameFlag).Run(); err != nil {
+	// 	 exitWithError(err.Error())
+	// }
 
 	if err = exec.Command("goimports", "-w", *filenameFlag).Run(); err != nil {
 		exitWithError(err.Error())
